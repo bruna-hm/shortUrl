@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Link Encurtado</title>
+</head>
+<body>
+  <h2>Seu link encurtado:</h2>
+  <input type="text" id="linkCurto" value="{{ url_curta }}" readonly style="width: 300px;"/>
+  <button onclick="copiarLink()">Copiar</button>
+
+  <script>
+    function copiarLink() {
+      const input = document.getElementById("linkCurto");
+      input.select();
+      input.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Link copiado para a área de transferência!");
+    }
+  </script>
+</body>
+</html>
