@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, redirect, abort
 import os
 import sqlite3
-from dao import create_tab, cad_url
-from views.utils import encurtar_url
+from shortPolis.dao import create_tab, cad_url
+from shortPolis.views.utils import encurtar_url
 
 app = Flask(__name__)
 create_tab()
