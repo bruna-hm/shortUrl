@@ -5,6 +5,8 @@ from shortPolis.dao import create_tab, cad_url
 from shortPolis.views.utils import encurtar_url
 
 app = Flask(__name__)
+port = int(os.environ.get("PORT", 5000))
+app.run(host='0.0.0.0', port=port)
 create_tab()
 
 @app.route("/")
@@ -35,8 +37,3 @@ def redirecionar(codigo):
         return redirect(url_longa)
     else:
         return abort(404, description="Link não encontrado ou expirado")
-
-if __name__ == "__main__":
-    create_tab()
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
